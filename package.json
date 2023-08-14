@@ -44,6 +44,7 @@
     "is-glob": "^4.0.3",
     "is-number": "^7.0.0",
     "jiti": "^1.19.1",
+    "kutty": "^0.6.0",
     "lilconfig": "^2.1.0",
     "lines-and-columns": "^1.2.4",
     "merge2": "^1.4.1",

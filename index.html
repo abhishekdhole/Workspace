@@ -8,65 +8,136 @@
     <!-- font-awesome website link to add icon in website-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <!-- link CSS file -->
+    <!-- Link CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- tailwind CSS -->
+
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- This is for icon appearing on nav bar the solution is here -->
+    <style>
+        .services-container {
+            overflow: hidden;
+        }
+
+        .services-container .grid {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    </style>
+
     <title>Landing Page</title>
+
+
 </head>
 
-<body>
+<body class=" bg-gradient-to-r from-blue-50 via-white to-white  text-base/loose font-body ">
 
-    <!-- Header Section  -->
 
-    <header
-        class="text-purple-600 body-font sticky inset-0 top-0 z-10 block rounded-none border border-white/80 bg-white bg-opacity-100  shadow-md backdrop-blur-2xl backdrop-saturate-200 ">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full"
-                    viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="ml-3 text-xl text-purple-600">PrepCareer</span>
+    <!-- Navbar Started -->
+
+    <div class="flex justify-between sticky top-0 z-10 bg-white text-xl mr-5 font-extrabold tracking-wide">
+        <div class="flex space-x-8 items-center">
+            <div>
+                <!-- Website Logo -->
+                <a href="#" class="flex items-center py-4 px-2">
+                    <img src="./Asset/8_1sasa11.jpg" alt="#" class="h-9 w-10 mr-2">
+                    <span class="font-extrabold text-purple-500 text-lg">PrepCareer</span>
+                </a>
+            </div>
+            <!-- Primary Navbar items -->
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="#" class="py-4 px-2 text-purple-500 hover:text-gray-500 font-semibold">Home</a>
+                <a href="#service"
+                    class="py-4 px-2 hover:text-gray-500 font-semibold transition duration-300">Services</a>
+                <a href="#about" class="py-4 px-2 hover:text-gray-500 font-semibold transition duration-300">About</a>
+                <a href="#contactus" class="py-4 px-2 hover:text-gray-500 font-semibold transition duration-300">Contact
+                    Us</a>
+
+
+            </div>
+        </div>
+
+
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3 mr-10">
+            <a href="signin.html"
+                class="py-2 px-1 mr-3 group relative h-10 w-36 text-center rounded-xl bg-purple-700 text-base font-medium hover:text-gray-500 text-white ">
+                Login
+                <div
+                    class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30">
+                </div>
             </a>
-            <nav
-                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 font-medium text-xl	flex flex-wrap items-center  justify-center">
-                <a href="#" class="mr-5 hover:text-gray-900">Home</a>
-                <a href="#" class="mr-5 hover:text-gray-900"> About</a>
-                <a href="#" class="mr-5 hover:text-gray-900">Services</a>
-                <a href="#" class="mr-5 hover:text-gray-900">Contact</a>
-            </nav>
-            <button
-                class="inline-flex items-center bg-purple-500  text-white border-0 py-1 px-3 focus:outline-none hover:bg-purple-200 rounded text-base mt-4 md:mt-0">Sign
-                Up
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+            <div class="hidden sm:flex">
+                <a href="signin.html" class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-purple-600"
+                    href="/">Register</a>
+            </div>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+                <svg class="w-6 h-6 text-gray-500 hover:text-purple-500" x-show="!showMenu" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
-    </header>
+    </div>
+
+    <!-- mobile menu -->
+    <div class="hidden mobile-menu">
+        <ul class="">
+            <li><a href="#home" class="block text-sm px-2 py-4 text-white bg-purple-500 font-semibold">Home</a></li>
+            <li><a href="#services"
+                    class="block text-sm px-2 py-4 hover:bg-purple-500 transition duration-300">Services</a></li>
+            <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-purple-500 transition duration-300">About</a>
+            </li>
+            <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-purple-500 transition duration-300">Contact
+                    Us</a></li>
+            <li>
+                <a href="#" class="block text-sm px-2 py-4 text-white bg-purple-700 font-semibold">Login</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+
+            // Hide mobile menu when screen size changes
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 768) {
+                    menu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+    <!-- Header Section End Here -->
+
 
     <!-- Hero Section -->
-    <section class="bg-white">
-        <!-- <div class="relative overflow-hidden bg-cover bg-no-repeat " style="
-        background-position: 50%; opacity:10;
-        background-image: url('./Asset/bg-1.jpg');
-        height: 500px;
-      "> -->
+    <section id="home">
+
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1
-                    class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-gray-800">
-                    Payments tool for software companies</h1>
+                    class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-gray-700">
+                    The Ultimate Interview Preparation Guide</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-500">
-                    From
-                    checkout to global sales tax compliance, companies around the world use Flowbite to simplify
-                    their
-                    payment stack.</p>
-                <a href="#"
+                    Our website is the most comprehensive guide to interview preparation on the internet. We
+                    cover
+                    everything from how to dress for an interview to how to answer common interview questions
+                </p>
+                <a href="content.html"
                     class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900">
                     Get started
                     <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
@@ -78,151 +149,116 @@
                 </a>
 
             </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="./Asset/bg.svg" alt="mockup">
+            <div class="lg:mt-0 lg:col-span-5 lg:flex h-full w-full">
+                <img src="./Asset/BGA.jpg" alt="mockup">
             </div>
         </div>
-        <!-- </div> -->
+
     </section>
+    <!-- Hero Section End  -->
+
 
 
     <!-- Companies -->
 
     <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="text-center mb-20">
-                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Our Users Have
+        <div class="container px-5 py-5 mx-auto">
+            <div class="text-center mb-20 mr-auto place-self-center lg:col-span-7">
+                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Our Users
+                    Have
                     <b>Cracked interviews at</b>
                 </H1>
-                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic
-                    four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.
+                <p
+                    class="text-base leading-none xl:w-2/4 lg:w-3/4 mx-auto max-w-2xl mb-6 tracking-tight font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
             </div>
 
-
-            <!-- Blur effect  -->
-            <div
-                class="absolute  opacity-50 pt-20 pl-52 -left-4 w-96 h-96  filter blur-3xl mix-blend-multiply bg-purple-100 rounded-full ">
-            </div>
-            <div
-                class="absolute opacity-50 left-40 w-96 h-96 filter blur-3xl  mix-blend-multiply bg-yellow-100 rounded-full">
-            </div>
-            <div
-                class="absolute  opacity-50 left-40 w-96 h-96  filter blur-3xl mix-blend-multiply bg-pink-100 rounded-full">
-            </div>
-
-            <!-- blur effect end -->
-
-
-
-            <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">Capgemini</span>
-                    </div>
+            <div class="grid grid-cols-8 gap-14 text-center  animate-pulse ">
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/Accenture.svg" alt="Todoist Logo" class="block object-contain h-12" />
                 </div>
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">HCL Tech</span>
-                    </div>
-
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/Capgemini.svg" alt="Slack Logo" class="block object-contain h-12" />
                 </div>
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">Congnizant</span>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/HCL_Technologies_logo.svg" alt="Typeform Logo"
+                        class="block object-contain h-12" />
                 </div>
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">Hexaware</span>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/Tata_Consultancy_Services_Logo.svg" alt="Algolia Logo"
+                        class="block object-contain h-12" />
                 </div>
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">TCS Services</span>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/Infosys_logo.svg" alt="Postcss Logo" class="block object-contain h-12" />
                 </div>
-                <div class="p-2 sm:w-1/2 w-full">
-                    <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="3" class="text-purple-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                            <path d="M22 4L12 14.01l-3-3"></path>
-                        </svg>
-                        <span class="title-font font-medium">Persitant</span>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <img src="/./Asset/company/IBM_logo.svg" alt="TailwindCSS Logo" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/Tech_Mahindra_New_Logo.svg" alt="Discord Logo"
+                        class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="./Asset/company/DXC_Technology_logo_(2021).svg" alt="Vimeo Logo"
+                        class="block object-contain h-12" />
                 </div>
             </div>
-            <!-- <button
-                class="flex mx-auto mt-16 text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg">Get Sarted</button>
-        </div> -->
+
+
+
     </section>
+
+    <!-- Companies End Here-->
 
 
     <!-- Our Services -->
-    <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto ">
+    <section id="service" class="text-gray-600 body-font services-container">
+        <div class="container px-5 py-16 mx-auto ">
             <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Services</h1>
+                <h1
+                    class="mb-4 text-2xl font-semibold tracking-wider text-center text-black dark:text-white uppercase rounded-full bg-teal-accent-400">
+                    Our Services</h1>
                 <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur,
-                    adipisicing elit. Dolor maiores excepturi corrupti. Facilis explicabo ipsam odit beatae ea libero
-                    vel, veniam esse laboriosam sequi repellendus dolorum quidem doloribus temporibus aperiam?</p>
+                    adipisicing elit. Dolor maiores excepturi corrupti. Facilis explicabo ipsam odit beatae ea
+                    libero
+                    vel, veniam esse laboriosam sequi repellendus dolorum quidem doloribus temporibus aperiam?
+                </p>
             </div>
             <div class="max-w-[1200px] mx-auto py-[30px] grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
-                <div class=" group shadow-lg p-4 text-cente hover:bg-purple-400 hover:text-white duration-1000">
+                <div class=" group shadow-lg p-4 text-center hover:bg-purple-500 hover:text-white duration-1000">
                     <i
-                        class="fas fa-laptop-code text-2xl group-hover:text-white text-purple-800 duration-1000 animate-bounce"></i>
+                        class="fas fa-laptop-code text-2xl group-hover:text-white text-purple-500 duration-1000 animate-bounce"></i>
                     <h3 class="text-2xl py-2 "> Interview Questions</h3>
-                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo consequuntur
+                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo
+                        consequuntur
                         sit
                         minima.</p>
                 </div>
-                <div class=" group shadow-lg p-4 text-cente hover:bg-purple-400 hover:text-white duration-1000">
+                <div class=" group shadow-lg p-4 text-center hover:bg-purple-500 hover:text-white duration-1000">
                     <i
-                        class="fas fa-language text-2xl group-hover:text-white text-purple-800 duration-1000 animate-bounce"></i>
+                        class="fas fa-language text-2xl group-hover:text-white text-purple-500 duration-1000 animate-bounce"></i>
                     <h3 class="text-2xl py-2 "> Resume Building</h3>
-                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo consequuntur
+                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo
+                        consequuntur
                         sit
                         minima.</p>
                 </div>
-                <div class=" group shadow-lg p-4 text-cente hover:bg-purple-400 hover:text-white duration-1000">
+                <div class=" group shadow-lg p-4 text-center hover:bg-purple-500 hover:text-white duration-1000">
                     <i
-                        class="fas fa-camera text-2xl group-hover:text-white text-purple-800 duration-1000 animate-bounce"></i>
+                        class="fas fa-camera text-2xl group-hover:text-white text-purple-500 duration-1000 animate-bounce"></i>
                     <h3 class="text-2xl py-2 "> Interview Prep</h3>
-                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo consequuntur
+                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo
+                        consequuntur
                         sit
                         minima.</p>
                 </div>
-                <div class=" group shadow-lg p-4 text-center hover:bg-purple-400 hover:text-white duration-1000">
+                <div class=" group shadow-lg p-4 text-center hover:bg-purple-500 hover:text-white duration-1000">
                     <i
-                        class="fas fa-video text-2xl group-hover:text-white text-purple-800 duration-1000 animate-bounce"></i>
+                        class="fas fa-video text-2xl group-hover:text-white text-purple-500 duration-1000 animate-bounce"></i>
                     <h3 class="text-2xl py-2 "> Consultant</h3>
-                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo consequuntur
+                    <p class="text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quo
+                        consequuntur
                         sit
                         minima.</p>
                 </div>
@@ -233,117 +269,386 @@
                 Started</button>
     </section>
 
+    <!-- Our Services end here-->
+
+
+
+
     <!-- Testimonials Started -->
 
-    <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
-            <div class="flex flex-wrap -m-4">
-                <div class="p-4 md:w-1/2 w-full">
-
-                    <!-- Blur effect  -->
-                    <div
-                        class="absolute  opacity-50 pt-20 pl-52 -left-4 w-96 h-96  filter blur-3xl mix-blend-multiply bg-purple-100 rounded-full ">
-                    </div>
-                    <div
-                        class="absolute opacity-50 left-40 w-96 h-96 filter blur-3xl  mix-blend-multiply bg-lime-100 rounded-full">
-                    </div>
-                    <div
-                        class="absolute  opacity-50 left-40 w-96 h-96  filter blur-3xl mix-blend-multiply bg-pink-100 rounded-full">
-                    </div>
-
-                    <!-- blur effect end -->
-
-
-                    <div class="h-full bg-gray-100 p-8 rounded">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+    <h2
+        class="mb-4 text-2xl font-semibold tracking-wider text-center text-black dark:text-white uppercase rounded-full bg-teal-accent-400">
+        Testimonials</h2>
+    <h1 class="text-base text-center text-gray-700 md:text-lg font-bold">What
+        our client says</h1>
+    <div
+        class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6">
+        <div>
+            <div
+                class="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-purple-500 cursor-pointer shadow-md md:p-12 p-6">
+                <div class="text-gray-600 dark:text-gray-200   group-hover:text-white flex flex-col items-center">
+                    <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
                             <path
-                                d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
-                            </path>
-                        </svg>
-                        <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday
-                            carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo,
-                            post-ironic heirloom try-hard pabst authentic iceland.</p>
-                        <a class="inline-flex items-center">
-                            <img alt="testimonial" src="https://dummyimage.com/106x106"
-                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                            <span class="flex-grow flex flex-col pl-4">
-                                <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
-                                <span class="text-gray-500 text-sm">UI DEVELOPER</span>
-                            </span>
-                        </a>
+                                d="M25.2578 14.3309H19.2969C19.3988 9.55819 20.6309 9.01642 22.1785 8.86178L22.7753 8.78051V3.53242L22.0874 3.57292C20.0666 3.69783 17.8323 4.09805 16.3417 6.11965C15.035 7.89183 14.459 10.7871 14.459 15.2316V23.4673H25.2578V14.3309Z"
+                                fill="currentColor" />
+                            <path
+                                d="M11.48 23.4673V14.3309H5.59859C5.70049 9.55819 6.89283 9.01642 8.44042 8.86178L8.99749 8.78051V3.53242L8.34931 3.57292C6.32844 3.69783 4.07421 4.09805 2.5836 6.11965C1.27707 7.89183 0.681147 10.7871 0.681147 15.2316V23.4673H11.48Z"
+                                fill="currentColor" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="24.5767" height="27" fill="white"
+                                    transform="translate(25.2578 27) rotate(-180)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p class="xl:w-80 text-base leading-normal text-center mt-4">When our designs need an expert opinion
+                        or approval, I know I can rely on your agency Thank you for all your help-I will be recommending
+                        you to everyone</p>
+                </div>
+                <div class="text-white dark:text-gray-800 group-hover:text-purple-700 absolute bottom-0 -mb-6">
+                    <svg width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_dd)">
+                            <path d="M17 19L28.2583 3.25H5.74167L17 19Z" fill="currentColor" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_dd" x="0.741699" y="0.25" width="32.5167" height="27.75"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feMorphology radius="1" operator="erode" in="SourceAlpha"
+                                    result="effect1_dropShadow" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="3" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="2" />
+                                <feGaussianBlur stdDeviation="2.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center mt-10">
+                <img src="https://i.ibb.co/ZgF5Zzz/avatar-1.png" alt="profile pictre" class="w-12 h-12" />
+                <p class="text-base font-semibold leading-4 my-2 text-gray-800 dark:text-white  ">Tom Koch</p>
+                <p class="text-base leading-4 text-center text-gray-600 dark:text-gray-200  ">Developer</p>
+            </div>
+        </div>
+        <div>
+            <div
+                class="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-purple-500 cursor-pointer shadow-md md:p-12 p-6">
+                <div class="text-gray-600 dark:text-gray-200   group-hover:text-white flex flex-col items-center">
+                    <svg class="" width="26" height="27" viewBox="0 0 26 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M25.2578 14.3309H19.2969C19.3988 9.55819 20.6309 9.01642 22.1785 8.86178L22.7753 8.78051V3.53242L22.0874 3.57292C20.0666 3.69783 17.8323 4.09805 16.3417 6.11965C15.035 7.89183 14.459 10.7871 14.459 15.2316V23.4673H25.2578V14.3309Z"
+                                fill="currentColor" />
+                            <path
+                                d="M11.48 23.4673V14.3309H5.59859C5.70049 9.55819 6.89283 9.01642 8.44042 8.86178L8.99749 8.78051V3.53242L8.34931 3.57292C6.32844 3.69783 4.07421 4.09805 2.5836 6.11965C1.27707 7.89183 0.681147 10.7871 0.681147 15.2316V23.4673H11.48Z"
+                                fill="currentColor" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="24.5767" height="27" fill="white"
+                                    transform="translate(25.2578 27) rotate(-180)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p class="xl:w-80 text-base leading-normal text-center mt-4">When our designs need an expert opinion
+                        or approval, I know I can rely on your agency Thank you for all your help-I will be recommending
+                        you to everyone</p>
+                </div>
+                <div class="text-white dark:text-gray-800 group-hover:text-purple-700 absolute bottom-0 -mb-6">
+                    <svg width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_dd)">
+                            <path d="M17 19L28.2583 3.25H5.74167L17 19Z" fill="currentColor" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_dd" x="0.741699" y="0.25" width="32.5167" height="27.75"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feMorphology radius="1" operator="erode" in="SourceAlpha"
+                                    result="effect1_dropShadow" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="3" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="2" />
+                                <feGaussianBlur stdDeviation="2.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center mt-10">
+                <img src="https://i.ibb.co/8BLjmqz/avatar-2.png" alt="profile pictre" class="w-12 h-12" />
+                <p class="text-base font-semibold leading-4 my-2 text-gray-800 dark:text-white  ">Alan Max</p>
+                <p class="text-base leading-4 text-center text-gray-600 dark:text-gray-200  ">Designer</p>
+            </div>
+        </div>
+        <div>
+            <div
+                class="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-purple-500  cursor-pointer shadow-md md:p-12 p-6">
+                <div class="text-gray-600 dark:text-gray-200   group-hover:text-white flex flex-col items-center">
+                    <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M25.2578 14.3309H19.2969C19.3988 9.55819 20.6309 9.01642 22.1785 8.86178L22.7753 8.78051V3.53242L22.0874 3.57292C20.0666 3.69783 17.8323 4.09805 16.3417 6.11965C15.035 7.89183 14.459 10.7871 14.459 15.2316V23.4673H25.2578V14.3309Z"
+                                fill="currentColor" />
+                            <path
+                                d="M11.48 23.4673V14.3309H5.59859C5.70049 9.55819 6.89283 9.01642 8.44042 8.86178L8.99749 8.78051V3.53242L8.34931 3.57292C6.32844 3.69783 4.07421 4.09805 2.5836 6.11965C1.27707 7.89183 0.681147 10.7871 0.681147 15.2316V23.4673H11.48Z"
+                                fill="currentColor" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="24.5767" height="27" fill="white"
+                                    transform="translate(25.2578 27) rotate(-180)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p class="xl:w-80 text-base leading-normal text-center mt-4">When our designs need an expert opinion
+                        or approval, I know I can rely on your agency Thank you for all your help-I will be recommending
+                        you to everyone</p>
+                </div>
+                <div class="text-white dark:text-gray-800 group-hover:text-purple-700 absolute bottom-0 -mb-6">
+                    <svg width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_dd)">
+                            <path d="M17 19L28.2583 3.25H5.74167L17 19Z" fill="currentColor" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_dd" x="0.741699" y="0.25" width="32.5167" height="27.75"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feMorphology radius="1" operator="erode" in="SourceAlpha"
+                                    result="effect1_dropShadow" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="3" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="2" />
+                                <feGaussianBlur stdDeviation="2.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center mt-10">
+                <img src="https://i.ibb.co/y0KCX7p/avatar-3.png" alt="profile pictre" class="w-12 h-12" />
+                <p class="text-base font-semibold leading-4 my-2 text-gray-800 dark:text-white  ">Kera Joo</p>
+                <p class="text-base leading-4 text-center text-gray-600 dark:text-gray-200  ">Support</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Testimonials End Here -->
+
+
+    <!-- about as started here  -->
+    <section>
+        <div
+            class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 animate-pulse">
+            <div class="mx-auto mb-10 lg:max-w-xl sm:text-center">
+                <p
+                    class="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-black uppercase rounded-full bg-teal-accent-400">
+                    Discover Our Team
+                </p>
+                <p class="text-base text-gray-700 md:text-lg">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                </p>
+            </div>
+            <div class="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg">
+                <div>
+                    <div class="relative pb-56 mb-4 rounded shadow lg:pb-64">
+                        <img class="absolute object-cover w-full h-full rounded"
+                            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                            alt="Person" />
+                    </div>
+                    <div class="flex flex-col sm:text-center">
+                        <p class="text-lg font-bold">Oliver Aguilerra</p>
+                        <p class="mb-5 text-xs text-gray-800">Product Manager</p>
+                        <div class="flex items-center space-x-3 sm:justify-center">
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="p-4 md:w-1/2 w-full">
-                    <div class="h-full bg-gray-100 p-8 rounded">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
-                            <path
-                                d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
-                            </path>
-                        </svg>
-                        <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday
-                            carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo,
-                            post-ironic heirloom try-hard pabst authentic iceland.</p>
-                        <a class="inline-flex items-center">
-                            <img alt="testimonial" src="https://dummyimage.com/107x107"
-                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                            <span class="flex-grow flex flex-col pl-4">
-                                <span class="title-font font-medium text-gray-900">Alper Kamu</span>
-                                <span class="text-gray-500 text-sm">DESIGNER</span>
-                            </span>
-                        </a>
+                <div>
+                    <div class="relative pb-56 mb-4 rounded shadow lg:pb-64">
+                        <img class="absolute object-cover w-full h-full rounded"
+                            src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                            alt="Person" />
+                    </div>
+                    <div class="flex flex-col sm:text-center">
+                        <p class="text-lg font-bold">Marta Clermont</p>
+                        <p class="mb-5 text-xs text-gray-800">Design Team Lead</p>
+                        <div class="flex items-center space-x-3 sm:justify-center">
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative pb-56 mb-4 rounded shadow lg:pb-64">
+                        <img class="absolute object-cover w-full h-full rounded"
+                            src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                            alt="Person" />
+                    </div>
+                    <div class="flex flex-col sm:text-center">
+                        <p class="text-lg font-bold">Alice Melbourne</p>
+                        <p class="mb-5 text-xs text-gray-800">Human Resources</p>
+                        <div class="flex items-center space-x-3 sm:justify-center">
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative pb-56 mb-4 rounded shadow lg:pb-64">
+                        <img class="absolute object-cover w-full h-full rounded"
+                            src="https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                            alt="Person" />
+                    </div>
+                    <div class="flex flex-col sm:text-center">
+                        <p class="text-lg font-bold">John Doe</p>
+                        <p class="mb-5 text-xs text-gray-800">Good guy</p>
+                        <div class="flex items-center space-x-3 sm:justify-center">
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="/"
+                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                    <path
+                                        d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Conatct us -->
-
-
-    <section class="text-gray-600 body-font relative">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
-                    asymmetrical gentrify.</p>
-            </div>
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                            <input type="text" id="name" name="name"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                        </div>
-                    </div>
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                            <input type="email" id="email" name="email"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                        </div>
-                    </div>
-                    <div class="p-2 w-full">
-                        <div class="relative">
-                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                            <textarea id="message" name="message"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                        </div>
-                    </div>
-                    <div class="p-2 w-full">
-                        <button
-                            class="flex mx-auto text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg">Send</button>
-                    </div>
+    <!-- about as started end here  -->
 
 
+    <!-- Contact Us -->
+    <section id="contactus" class="text-gray-600 body-font">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2
+                class="mb-4 text-2xl font-semibold tracking-wider text-center text-black dark:text-white uppercase rounded-full bg-teal-accent-400">
+                Contact Us</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a
+                technical issue? Want to send feedback about a beta feature? Need details about our Business plan?
+                Let us know.</p>
+            <form action="#" class="space-y-8">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
+                        email</label>
+                    <input type="email" id="email"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="name@PrepCareer.com" required>
                 </div>
-            </div>
+                <div>
+                    <label for="subject"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                    <input type="text" id="subject"
+                        class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Let us know how we can help you" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
+                        message</label>
+                    <textarea id="message" rows="6"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Leave a comment..."></textarea>
+                </div>
+                <button type="submit"
+                    class="flex items-center mx-auto mt-16 text-center text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg">Send
+                    Message</button>
+                <!-- <button type="submit"
+                    class=" items-center py-3 px-5 text-sm font-medium text-center lg:items-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-purple-800 focus:ring-4 focus:outline focus:ring-purple-300  bg-purple-600  dark:hover:bg-purple-700 dark:focus:ring-primary-800">Send
+                    message</button> -->
+            </form>
         </div>
-        </div>
+
     </section>
+    <!-- Contact Us End Here -->
+
+
+
+
 
     <!-- Footer -->
     <footer class="">
@@ -550,6 +855,10 @@
             </div>
         </div>
     </footer>
+
+
+
+    <!-- Footer End Here  -->
 
 
 </body>
